@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "description": "Milk",
+      "quantity": 2
+    },
+    {
+      "id": 2,
+      "description": "Apples",
+      "quantity": 4
+    },
+    {
+      "id": 3,
+      "description": "Chocolate",
+      "quantity": "13"
+    }
+  ]
+}

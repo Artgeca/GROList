@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="./js/main.js" defer type="module"></script>
+    <title>GROList</title>
+  </head>
+  <body>
+    <div class="container text-center">
+      <h1 class="text-white display-3 mt-5">GROList</h1>
+      <span class="text-white lead"
+        >Don't forget to remember... Or use GROcery List to remember for you...
+      </span>
+      <div class="bg-white shadow-lg rounded p-5 my-5">
+        <form class="row p-4 bg-light rounded">
+          <div class="pb-2 col-lg-8">
+            <input
+              type="text"
+              name="description"
+              class="form-control"
+              placeholder="Add something to remember..."
+              required
+            />
+          </div>
+          <div class="pb-2 col-lg-2">
+            <input
+              type="number"
+              name="quantity"
+              class="form-control"
+              min="1"
+              value="1"
+            />
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn btn-success form-control col-2">
+              Add
+            </button>
+          </div>
+        </form>
+        <div class="groceries-list__items mt-4">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="product-description" class="col-form-label"
+                  >Description:</label
+                >
+                <input type="text" class="form-control" id="product-description" />
+              </div>
+              <div class="mb-3">
+                <label for="product-quantity" class="col-form-label"
+                  >Quantity:</label
+                >
+                <input class="form-control" type="number" min="1" value="1" id="product-quantity"></input>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-success" id="save-btn">Save Product</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
